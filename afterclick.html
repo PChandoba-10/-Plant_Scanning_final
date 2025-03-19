@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captured Image</title>
+    <link rel="stylesheet" href="afterclick.css">
+</head>
+<body>
+
+    <h2>Captured Image</h2>
+    <img id="capturedImage" alt="Captured Photo" width="400">
+    <br>
+    <button onclick="goBack()">Capture Another</button>
+
+    <script>
+        // Retrieve the captured image from local storage
+        const imageData = localStorage.getItem("capturedImage");
+        
+        if (imageData) {
+            document.getElementById("capturedImage").src = imageData;
+        }
+
+        function goBack() {
+            window.location.href = "camera.html"; // Change to the correct filename if needed
+        }
+    </script>
+
+</body>
+</html>
+
+
